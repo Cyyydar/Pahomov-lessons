@@ -17,7 +17,9 @@ int main()
 
     for(int j = 0; j < COUNT_STROK; j++){
         for(int i = 0; i < COUNT_STOLB; i++) {
-            cout << "/t"<< Matrix[j][i];
+            cout.flags(ios::right);
+            cout.width(5);
+            cout << Matrix[j][i];
         }
         cout << endl;
     }
