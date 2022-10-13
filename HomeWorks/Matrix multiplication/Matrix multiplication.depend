@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1665602644 source:/home/alexey/CodeBlocks/Matrix multiplication/main.cpp
+	<iostream>
+
+1665609837 source:/home/alexey/CodeBlocks/Pahomov lessions/HomeWorks/Matrix multiplication/main.cpp
+	<iostream>
+	<limits>
+
