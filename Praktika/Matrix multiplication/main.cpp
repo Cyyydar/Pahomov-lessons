@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 
 using namespace std;
 
@@ -21,8 +20,8 @@ int main()
     createArr(Arr1,Size1);
     createArr(Arr2,Size2);
     if( Size1[1] != Size2[0]){
-        cout << "РњР°С‚СЂРёС†С‹ РЅРµР»СЊР·СЏ РїРµСЂРµРјРЅРѕР¶РёС‚СЊ\n";
-        cout << "Р Р°Р·РјРµСЂ СЃС‚РѕР»Р±С†РѕРІ РїРµСЂРІРѕР№ РјР°С‚СЂРёС†С‹ РЅРµ СЃРѕРІРїР°РґР°РµС‚ СЃ СЂР°Р·РјРµСЂРѕРј СЃС‚СЂРѕРє РІРѕ РІС‚РѕСЂРѕР№\n";
+        cout << "Матрицы нельзя перемножить\n";
+        cout << "Размер столбцов первой матрицы не совпадает с размером строк во второй\n";
         return 0;
     }
 
@@ -38,9 +37,9 @@ int main()
     return 0;
 }
 
-// РџРµСЂРµРјРЅРѕР¶РµРЅРёРµ
+// Перемножение
 void matrixMultiplication(int**& M1, int**& M2, int K1[], int K2[]){
-    //РџСЂРёСЃРІР°РёРІР°РµРј РєР°Р¶РґС‹Р№ СЌР»РµРјРµРЅС‚ РјР°С‚СЂРёС†С‹
+    //Присваиваем каждый элемент матрицы
     for (int i = 0; i < ResultSize[0]; i++){
         for(int j = 0; j < ResultSize[1]; j++){
 
@@ -54,40 +53,31 @@ void matrixMultiplication(int**& M1, int**& M2, int K1[], int K2[]){
     showMass(Result,ResultSize);
 }
 
-// РЎРѕР·РґР°РЅРёРµ Рё РІРІРѕРґ РјР°С‚СЂРёС†
+// Создание и ввод матриц
 void createArr(int**&M, int K[2]) {
     delete[]M;
-    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє РјР°СЃСЃРёРІР°\n";
+    cout << "Введите кол-во строк массива\n";
     int a;
     //cin >> a;
-//    while(!(cin >> a) || cin.get() != '\n') {
-//        cout << "1\n";
-//        cin.sync();
-//        cin.clear();
-//        //cout << "Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ: ";
-//    }
-    while(1){
-        if(!(cin >> a) || cin.get() != '\n'){
-            cout << a;
-            cin.ignore(numeric_limits<streamsize>::max());
-            cin.clear();
-            cin.sync();
-            //cout << "mama mia";
-        } else {
-            cout << "exit";
-        }
+    while(!(cin>>a) || cin.get() != '\n')
+    {
+        cout<<"IDIOT !! Enter again !\n";
+        cin.clear(); // сбрасывает все биты потока, тоесть поток становится "хорошим"
+        cin.sync();//Удалим данные из буффера
+        cout<<"Enter int : ";
     }
     if(a < 1) {
-        cout << "РќРµРІРµСЂРЅС‹Р№ СЂР°Р·РјРµСЂ\n";
+        cout << "Неверный размер\n";
         return;
     }
 
+
     K[0] = a;
 
-    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РјР°СЃСЃРёРІР°\n";
+    cout << "Введите кол-во столбцов массива\n";
     cin >> a;
     if(a < 1) {
-        cout << "РќРµРІРµСЂРЅС‹Р№ СЂР°Р·РјРµСЂ\n";
+        cout << "Неверный размер\n";
         return;
     }
     K[1] = a;
@@ -97,7 +87,7 @@ void createArr(int**&M, int K[2]) {
         M[i] = new int[K[1]];
     }
 
-    cout << "Р’РІРµРґРёС‚Рµ " << K[0] * K[1] << " С†РµР»С‹С… С‡РёСЃРµР» (РјР°С‚СЂРёС†Сѓ)\n";
+    cout << "Введите " << K[0] * K[1] << " целых чисел (матрицу)\n";
     for (int i = 0; i < K[0]; i++){
         for(int j = 0; j < K[1]; j++){
             cin >> M[i][j];
@@ -105,13 +95,13 @@ void createArr(int**&M, int K[2]) {
     }
 }
 
-// Р’С‹РІРѕРґ
+// Вывод
 void showMass(int**& M, int K[]) {
     if(M == nullptr){
-        cout << " РњР°С‚СЂРёС†Р° РЅРµ Р±С‹Р» СЃРѕР·РґР°РЅ\n";
+        cout << " Матрица не был создан\n";
         return;
     }
-    cout << " РњР°С‚СЂРёС†Р°: \n";
+    cout << " Матрица: \n";
     for(int i = 0; i < K[0]; i++){
         for (int j = 0; j < K[1]; j++){
             cout << "\t" << M[i][j];
