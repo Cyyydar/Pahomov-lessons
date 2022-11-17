@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1665946366 source:/home/alexey/CodeBlocks/Praktika_7_1/main.cpp
+	<iostream>
+	<fstream>
+	<cmath>
+
