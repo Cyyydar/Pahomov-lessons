@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1668675014 source:/home/alexey/CodeBlocks/Primer_11_1/main.cpp
+	<iostream>
+	<limits>
+
