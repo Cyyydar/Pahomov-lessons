@@ -5,7 +5,7 @@ using namespace std;
 
 int createArray(int**& Array);
 void fillMatrix(int**& Array, int Size);
-void deleteArray(int**& Array);
+void deleteArray(int**& Array, int Size);
 void rotateArray(int**& Array, int Size);
 void printArray(int**& Array, int Size);
 void print(string str);
@@ -23,6 +23,7 @@ int main()
     print("\n");
     printArray(matrix,Size);
 
+	deleteArray(Matrix,Size);
     return 0;
 }
 void print(string str){

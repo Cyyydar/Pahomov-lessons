@@ -1,6 +1,9 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
+
+int getInt();
 
 int createMatrix(int**& M);
 void deleteMatrix(int**& M, int Size);
@@ -34,12 +37,13 @@ int createMatrix(int**& M){
 
     int Size;
     cout << "Enter matrix size\n";
-    cin >> Size;
+    do{
+        Size = getInt();
+        if(Size <= 1) {
+            cout << "Its not a matrix, try again\n";
+        }
+    } while(Size <= 1);
     M = new int*[Size];
-    if(Size <= 1) {
-        cout << "Its not a matrix\n";
-        return 0;
-    }
     for (int i = 0;i < Size;i++){
         M[i] = new int[Size];
     }
@@ -65,7 +69,8 @@ void fillMatrix(int**& M, int Size){
     cout << "Fill integer matrix: \n";
     for (int i = 0;i < Size; i++){
         for (int j = 0; j < Size; j++){
-            cin >> M[i][j];
+            cout << "[" << i <<"][" << j << "] ";
+            M[i][j] = getInt();
         }
     }
 }
@@ -150,4 +155,27 @@ void sortArray(int* A, int Size) {
     }
 }
 
+int getInt(){
+    while(1){
+        int i;
+        cout << "Enter int number:\n";
+        cin >> i;
+
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "Error, please try again\n";
+            continue;
+        }
+        if(cin.peek() != '\n') {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "Error, please try again\n";
+            continue;
+        }
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        return i;
+    }
+}
 
