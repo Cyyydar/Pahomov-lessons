@@ -6,25 +6,25 @@
 
 	```C++
 	double getDouble() {
-	double x;
-	while(true) {
+		double x;
+		while(true) {
 	
 		cin >> x; // пытаемся ввести данные
 
-        if(cin.fail()) { // если если ошибка ввода, то сообщаем об этом
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Error, try again\n";
-            continue; // и пробуем еще раз
-        }
-        if(cin.peek()!='\n') { // если в буфере осталось что-то, выдаем ошибку
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // очистка буфера
-            cout << "Error, try again\n";
-            continue;
-        }
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		if(cin.fail()) { // если если ошибка ввода, то сообщаем об этом
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Error, try again\n";
+			continue; // и пробуем еще раз
+		}
+		if(cin.peek()!='\n') { // если в буфере осталось что-то, выдаем ошибку
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // очистка буфера
+			cout << "Error, try again\n";
+			continue;
+		}
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-        return x; // возвращаем число
+		return x; // возвращаем число
     }
 
 	```
