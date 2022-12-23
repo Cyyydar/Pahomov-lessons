@@ -40,8 +40,9 @@
 
     input.close(); // закрываем файл
 		
-		
-		
+	```	
+	
+	```C++
     ofstream output("output.txt"); // открываем файл вывода
 	
     for (int i = 0;i < Size; i++){
