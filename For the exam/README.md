@@ -1,6 +1,6 @@
 # Некоторые программы для успешной сдачи экзамена по программирования на языках высокого уровня (C++)
 
- ### Список программ:
+ ### Программы и шпаргалки:
 
 * **Secure input**: Безопасный ввод, который принимает от пользователя только корректные данные
 
@@ -32,46 +32,24 @@
 * **Files**: Работа с файлами
 
 	```C++
-	#include <iostream>
-	#include <fstream>
+	#include <fstream> // чтобы использовать файловый вывод нужно подключить это
 
-	using namespace std;
+	ifstream input("input.txt"); // открываем файл ввода
+		
+    input >> Size; // достаем из файла числа аналогично cin
 
-	int main(){
-		ifstream input("input.txt"); //открываем файл ввода
-		int** M = nullptr;
-    int Size;
-
-    input >> Size; // достаем первое число - размер матрицы
-
-    M = new int*[Size];
-    for (int i = 0;i < Size;i++){
-        M[i] = new int[Size];
-    }
-
-    for (int i = 0;i < Size; i++){
-        for (int j = 0; j < Size; j++){
-            input >> M[i][j]; // достаем все остальные числа
-        }
-    }
     input.close(); // закрываем файл
-
+		
+		
+		
+    ofstream output("output.txt"); // открываем файл вывода
+	
     for (int i = 0;i < Size; i++){
         for (int j = 0; j < Size; j++){
-            cout << M[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    ofstream output("output.txt"); //открываем файл вывода
-
-    for (int i = 0;i < Size; i++){
-        for (int j = 0; j < Size; j++){
-            output << M[i][j] * 2 << " "; // печатаем числа в файл
+            output << M[i][j] * 2 << " "; // печатаем числа в файл аналогично cout
         }
         output << endl;
     }
 
     output.close();
-	}
 	```
