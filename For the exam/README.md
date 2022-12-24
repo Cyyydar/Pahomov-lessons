@@ -1,5 +1,5 @@
 # Некоторые программы для успешной сдачи экзамена по программирования на языках высокого уровня (C++)
-
+[![Donate](https://static.goodgame.ru/files/logotypes/ch_123719_yM3Y.jpg "Пожертвования")](https://www.tinkoff.ru/collectmoney/crowd/nepakharev.aleksey1/yNycm59514/?short_link=1FPWhkyr38D&httpMethod=GET)
  ### Программы и шпаргалки:
 
 * **Secure input**: Безопасный ввод, который принимает от пользователя только корректные данные
