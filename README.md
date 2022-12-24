@@ -4,6 +4,8 @@
  
  Если вы не обучаетесь в лучшем ВУЗе страны, то вам здесь делать нечего.
  
+ [![Donate](https://static.goodgame.ru/files/logotypes/ch_123719_yM3Y.jpg "Пожертвования")](https://www.tinkoff.ru/collectmoney/crowd/nepakharev.aleksey1/yNycm59514/?short_link=1FPWhkyr38D&httpMethod=GET)
+ 
  ### Лекции
  * **Лекция 1**  была утеряна
  * **Лекция 2**: Переход на C++, основы синтаксиса.
