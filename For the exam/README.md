@@ -5,6 +5,10 @@
 * **Secure input**: Безопасный ввод, который принимает от пользователя только корректные данные
 
 	```C++
+	#include <limits>
+	
+	...
+	
 	double getDouble() {
 		double x;
 		while(true) {
